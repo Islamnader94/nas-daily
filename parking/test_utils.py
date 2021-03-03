@@ -35,7 +35,7 @@ class TestUtils(TestCase):
     @patch('parking.utils.slot_car_info')
     def test_slot_car_info(self, mock_slot_car_info):
         """
-        Test unpark car function.
+        Test slot_car_info function.
         """
         mock_slot_car_info.return_value.json.return_value = {
             "car_number" : "C123",
