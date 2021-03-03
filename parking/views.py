@@ -1,24 +1,9 @@
-import json
-import io, csv
-from django.shortcuts import render
 from django.http import JsonResponse
 from .utils import park_car, unpark_car, slot_car_info
 from rest_framework.views import APIView
 from django.core.exceptions import ObjectDoesNotExist
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework import status
-
-# Create your views here.
-
-#park a car endpoint: car number as input and add the car to db and return where it is parked. if parking slots are full, retrun error message.
-
-# unpark a car: takes slot number where the car is parked, clears the parking for next usage
-
-#get car/slot information: takes slot number or car number and return car number and slot number for input usage.
-
-#if user makes more than 10 requests in 10 sec we retrun error message
-
-# https://github.com/simonw/ratelimitcache
 
 
 class ParkCarView(APIView):
@@ -33,7 +18,7 @@ class ParkCarView(APIView):
             return JsonResponse(
                 response,
                 safe=False,
-                status=status.HTTP_201_CREATED)
+                status=status.HTTP_200_OK)
 
         except ObjectDoesNotExist as e:
             return JsonResponse(

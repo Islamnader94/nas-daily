@@ -12,4 +12,4 @@ class CarSerializer(serializers.ModelSerializer):
 class ParkingSlotSerializer(serializers.ModelSerializer):
     class Meta:
         model = ParkingSlot
-        fields = '__all__'
+        fields = ['slot_number']
