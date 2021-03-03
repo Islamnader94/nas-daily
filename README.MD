@@ -13,5 +13,5 @@ docker exec -it backend-nas-daily python manage.py migrate
 ### To create a  super user for Django admin access:
 
 ```
-docker exec -it backend-nas-daily python manage.py migrate
+docker exec -it backend-nas-daily python manage.py createsuperuser
 ```
